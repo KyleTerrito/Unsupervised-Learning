@@ -1,0 +1,22 @@
+In many real-world situations, data does not come with clear labels or categories.
+
+How do we uncover hidden structures, patterns, or groupings in such datasets?
+
+Take a look at the provided dataset “Pyrolysis” (open in python or excel).
+
+What meaningful insights, trends, or groupings can you find in this data by inspecting it manually?
+
+
+
+Discussion:
+
+- How easy or hard was it to find meaningful insights?
+    ~ Could you find patterns or structures in the data.
+    ~ Discuss any challenges you faced, such as data complexity, volume, or lack of labels.
+
+- What methods did you use to explore the data?
+
+- What if the dataset had even more features or rows?
+
+- What is there was a way to automate this exploration without manual effort?
+    ~ Unsupervised Learning!!
