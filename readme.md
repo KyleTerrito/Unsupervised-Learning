@@ -20,9 +20,7 @@ This lecture will cover core unsupervised learning techniques that help extract 
 
 ### How to Maximize Your Learning Experience 🎯
 - Work through the provided notebooks and examples.
-- Apply clustering techniques to real-world datasets.
-- Engage in discussions and collaborate with peers.
-- Approach the material with an analytical mindset and curiosity.
+- Think about how these methods could be applied to your dataset for your project.
 
 ### Get Started 🚀
 To get started with the lecture materials, follow these steps:
