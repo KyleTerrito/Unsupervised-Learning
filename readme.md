@@ -6,11 +6,11 @@ Welcome to the **Unsupervised Learning** lecture series. In this lecture, we foc
 ### Lecture Overview 🤖🔬
 This lecture will cover core unsupervised learning techniques that help extract meaningful patterns from data. Topics include:
 
-✅ **Dimensionality Reduction** – Reducing data complexity while retaining important features through techniques like PCA, t-SNE, and UMAP.
 ✅ **Clustering** – Grouping similar data points together using algorithms such as K-Means, DBSCAN, and Hierarchical Clustering.
-✅ **Self-Organizing Maps (SOMs)** – Mapping high-dimensional data into meaningful 2D representations.
+✅ **Dimensionality Reduction** – Reducing data complexity while retaining important features through techniques like PCA, t-SNE, and Autoencoders.
 ✅ **Anomaly Detection** – Identifying unusual patterns and outliers within datasets.
-✅ **Real-world Applications** – Look into some real world applications of unsupervised learning. 
+✅ **Self-Organizing Maps (SOMs)** – Mapping high-dimensional data into meaningful 2D representations.
+✅ **Additional Techniques** – Exploring advanced methods for extracting insights from unlabeled data. 
 
 ### Why Unsupervised Learning? 🤷‍♂️
 - Useful when labeled data is unavailable or expensive to obtain.
@@ -19,8 +19,9 @@ This lecture will cover core unsupervised learning techniques that help extract 
 - Supports a variety of real-world applications, including customer segmentation, fraud detection, and bioinformatics.
 
 ### How to Maximize Your Learning Experience 🎯
-- Work through the provided activities!
-- Think about how this can be applied to your project.
+- Work through the provided notebooks and examples.
+- Apply clustering techniques to real-world datasets.
+- Engage in discussions and collaborate with peers.
 - Approach the material with an analytical mindset and curiosity.
 
 ### Get Started 🚀
@@ -29,18 +30,18 @@ To get started with the lecture materials, follow these steps:
 #### Option 1: Using a Virtual Environment
 ```sh
 # Clone the repository
-git clone <repository-url>
+git clone https://github.com/KyleTerrito/Unsupervised-Learning.git
 
 # Navigate into the project directory
 cd <project-directory>
 
 # Create and activate a virtual environment (Mac/Linux)
-python3 -m venv venv
-source venv/bin/activate
+python3 -m venv env
+source ./env/bin/activate
 
 # (Windows)
-python -m venv venv
-venv\Scripts\activate
+python -m venv env
+.\env\Scripts\activate
 
 # Install dependencies
 pip install -r requirements.txt
@@ -62,5 +63,5 @@ conda activate myenv
 pip install -r requirements.txt
 ```
 
-🤖✨ "The best discoveries are made when we let the data reveal its own story."
+🤖✨ _"The best discoveries are made when we let the data reveal its own story."_
 
