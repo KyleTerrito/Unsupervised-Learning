@@ -27,17 +27,17 @@ This lecture will cover core unsupervised learning techniques that help extract 
 ### Get Started 🚀
 To get started with the lecture materials, follow these steps:
 
-#### Option 1: Using a Virtual Environment
+#### Option 1: Using Python
 ```sh
 # Clone the repository
 git clone https://github.com/KyleTerrito/Unsupervised-Learning.git
 
 # Navigate into the project directory
-cd <project-directory>
+cd Unsupervised-Learning
 
 # Create and activate a virtual environment (Mac/Linux)
 python3 -m venv env
-source ./env/bin/activate
+source env/bin/activate
 
 # (Windows)
 python -m venv env
@@ -50,10 +50,10 @@ pip install -r requirements.txt
 #### Option 2: Using Anaconda
 ```sh
 # Clone the repository
-git clone <repository-url>
+git clone https://github.com/KyleTerrito/Unsupervised-Learning.git
 
 # Navigate into the project directory
-cd <project-directory>
+cd Unsupervised-Learning
 
 # Create and activate a new Anaconda environment
 conda create --name myenv python=3.8

@@ -18,27 +18,68 @@ def apply_pacmap(data):
     reducer = pacmap.PaCMAP(n_components=2)
     return reducer.fit_transform(data)
 
-# Generate animation with neighborhood radius visualization
+'''you can try running this one but it may be slow'''
+# # Generate animation with neighborhood radius visualization
+# def generate_animation(embedding, min_iter, max_iter, step):
+#     fig, ax = plt.subplots(figsize=(8, 6))
+    
+#     def update(eps):
+#         ax.clear()
+#         dbscan = DBSCAN(eps=eps, min_samples=5)
+#         labels = dbscan.fit_predict(embedding)
+#         scatter = ax.scatter(embedding[:, 0], embedding[:, 1], c=labels, cmap='viridis', alpha=0.6)
+        
+#         # Select one core point (if any)
+#         core_indices = np.where(labels != -1)[0]
+#         if len(core_indices) > 0:
+#             selected_index = np.random.choice(core_indices)  # Randomly choose one core point
+#             selected_point = embedding[selected_index]
+            
+#             # Draw a single circle around the selected core point
+#             circle = Circle((selected_point[0], selected_point[1]), eps, color='red', fill=False, alpha=0.7)
+#             ax.add_patch(circle)
+
+#         ax.set_title(f'DBSCAN Clustering (eps={eps:.2f})')
+#         ax.set_xlabel('PaCMAP Dimension 1')
+#         ax.set_ylabel('PaCMAP Dimension 2')
+#         return scatter,
+    
+#     ani = animation.FuncAnimation(fig, update, frames=np.arange(min_iter, max_iter + step, step), interval=500, repeat=True)
+#     plt.show()
+
+'''this version only plots a single fixed neighborhood radius'''
+# Generate animation with a single fixed neighborhood radius visualization
 def generate_animation(embedding, min_iter, max_iter, step):
     fig, ax = plt.subplots(figsize=(8, 6))
+
+    # Run DBSCAN once to pick a fixed core point (avoid noise)
+    dbscan_init = DBSCAN(eps=min_iter, min_samples=5)
+    labels_init = dbscan_init.fit_predict(embedding)
     
+    core_indices = np.where(labels_init != -1)[0]
+    if len(core_indices) > 0:
+        fixed_index = core_indices[0]  # Choose the first core point
+    else:
+        fixed_index = np.random.randint(0, len(embedding))  # Fallback: pick any point if no core found
+    
+    fixed_point = embedding[fixed_index]
+
     def update(eps):
         ax.clear()
         dbscan = DBSCAN(eps=eps, min_samples=5)
         labels = dbscan.fit_predict(embedding)
+        
         scatter = ax.scatter(embedding[:, 0], embedding[:, 1], c=labels, cmap='viridis', alpha=0.6)
         
-        # Add neighborhood radius circles for core points
-        for i, label in enumerate(labels):
-            if label != -1:  # Ignore noise points
-                circle = Circle((embedding[i, 0], embedding[i, 1]), eps, color='red', fill=False, alpha=0.3)
-                ax.add_patch(circle)
-        
+        # Draw a single circle around the fixed core point
+        circle = Circle((fixed_point[0], fixed_point[1]), eps, color='red', fill=False, alpha=0.7)
+        ax.add_patch(circle)
+
         ax.set_title(f'DBSCAN Clustering (eps={eps:.2f})')
         ax.set_xlabel('PaCMAP Dimension 1')
         ax.set_ylabel('PaCMAP Dimension 2')
         return scatter,
-    
+
     ani = animation.FuncAnimation(fig, update, frames=np.arange(min_iter, max_iter + step, step), interval=500, repeat=True)
     plt.show()
 
